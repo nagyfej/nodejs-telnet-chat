@@ -35,7 +35,8 @@ var server = net.createServer(function(socket){
 	}
 
 	socket.on('data', function(data){
-		message(data, socket.id);
+		var msg = '#' + socket.id + ' says: ' + data;		
+		message(msg, socket.id);
 	});
 	
 	people.push(socket);
